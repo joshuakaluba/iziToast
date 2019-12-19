@@ -103,6 +103,9 @@
 		transitionOutMobile: 'fadeOutDown',
 		buttons: {},
 		inputs: {},
+		useInitialsAsIcon: false,
+		initialsToDisplay: '',
+		initialsBackgroundColor: '#ff0000',
 		onOpening: function () {},
 		onOpened: function () {},
 		onClosing: function () {},
@@ -711,7 +714,7 @@
 			cover: document.createElement('div'),
 			buttons: document.createElement('div'),
 			inputs: document.createElement('div'),
-			icon: !settings.iconUrl ? document.createElement('i') : document.createElement('img'),
+			icon: settings.useInitialsAsIcon? document.createElement('div') : !settings.iconUrl ? document.createElement('i') : document.createElement('img'),
 			wrapper: null
 		};
 
@@ -865,11 +868,13 @@
 		// Icon
 		(function(){
 
-			if(settings.iconUrl) {
-
+			if(settings.useInitialsAsIcon === true) { 
+				$DOM.icon.setAttribute('class', PLUGIN_NAME + '-icon icon-initial');
+				$DOM.icon.setAttribute('style','background-color: ' + settings.initialsBackgroundColor + ';');
+				$DOM.icon.appendChild(document.createTextNode(settings.initialsToDisplay));				
+			} else if(settings.iconUrl) {
 				$DOM.icon.setAttribute('class', PLUGIN_NAME + '-icon');
 				$DOM.icon.setAttribute('src', settings.iconUrl);
-
 			} else if(settings.icon) {
 				$DOM.icon.setAttribute('class', PLUGIN_NAME + '-icon ' + settings.icon);
 				
