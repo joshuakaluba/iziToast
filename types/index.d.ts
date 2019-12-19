@@ -236,6 +236,20 @@ export interface IziToastSettings {
      */
     transitionOutMobile?: IziToastTransitionOut;
     /**
+     * Enable use of initials as notification icon.
+     * Default value: false
+     */
+    useInitialsAsIcon?: boolean;
+    /**
+     * The initials to display in the toast notification.
+     * Default value: ''
+     */
+    initialsToDisplay?: string;
+    /**
+     * The background color for the initials being displayed
+     */
+    initialsBackgroundColor?: string;
+    /**
      * Callback function triggered when opening the toast.
      * @param settings Settings of opening toast.
      * @param toast Toast DOM element.
