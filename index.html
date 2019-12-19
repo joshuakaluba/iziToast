@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test notifications</title>
+    <link rel="stylesheet" href="/dist/css/iziToast.min.css">
+    <script src="/dist/js/iziToast.min.js" type="text/javascript"></script>
+</head>
+
+<script>
+    function testNotification() {
+
+        var config = {
+        message: "Message",
+        position: 'bottomLeft',
+        theme: 'light',
+        layout: 2,
+        color: '#ffffff',
+        titleSize: '16',
+        messageSize: '16',
+        progressBar: false,
+        closeOnClick: true,
+        zindex: 2,
+        timeout: 500000,
+        backgroundColor: 'white',
+        initialsBackgroundColor: 'white',
+        useInitialsAsIcon: true,
+        initialsToDisplay: 'LK',
+        title: "Tests",
+        iconUrl: "https://joshuakaluba.com/img/img-mug.jpg"
+    };
+
+    // @ts-ignore
+    iziToast.show(config);
+
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+
+    <button onclick="testNotification()">Test</button>
+
+</body>
+
+</html>
